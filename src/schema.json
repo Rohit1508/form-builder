@@ -1,32 +1,69 @@
 {
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
   "type": "object",
+  "required": [
+    "label",
+    "icon",
+    "subSections"
+  ],
   "properties": {
-    "name": {
-      "type": "string",
-      "minLength": 1
-    },
-    "description": {
-      "title": "Long Description",
+    "label": {
+      "$id": "#/properties/label",
       "type": "string"
     },
-    "done": {
-      "type": "boolean"
+    "icon": {
+      "$id": "#/properties/icon",
+      "type": "object",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "$id": "#/properties/icon/properties/name",
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
     },
-    "due_date": {
-      "type": "string",
-      "format": "date"
-    },
-    "rating": {
-      "type": "integer",
-      "maximum": 5
-    },
-    "recurrence": {
-      "type": "string",
-      "enum": ["Never", "Daily", "Weekly", "Monthly"]
-    },
-    "recurrence_interval": {
-      "type": "integer"
+    "subSections": {
+      "$id": "#/properties/subSections",
+      "type": "array",
+      "items": {
+        "$id": "#/properties/subSections/items",
+        "type": "object",
+        "required": [
+          "label",
+          "icon",
+          "href"
+        ],
+        "properties": {
+          "label": {
+            "$id": "#/properties/subSections/items/properties/label",
+            "type": "string"
+          },
+          "icon": {
+            "$id": "#/properties/subSections/items/properties/icon",
+            "type": "object",
+            "required": [
+              "name"
+            ],
+            "properties": {
+              "name": {
+                "$id": "#/properties/subSections/items/properties/icon/properties/name",
+                "type": "string"
+              }
+            },
+            "additionalProperties": true
+          },
+          "href": {
+            "$id": "#/properties/subSections/items/properties/href",
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
     }
   },
-  "required": ["name", "due_date"]
+  "additionalProperties": true
 }

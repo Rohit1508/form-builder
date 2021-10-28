@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { createMuiTheme, CssBaseline, ThemeProvider } from '@material-ui/core';
 import ReactDOM from 'react-dom';
 import App from './App';

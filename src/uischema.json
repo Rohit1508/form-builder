@@ -3,52 +3,20 @@
   "elements": [
     {
       "type": "Control",
-      "label": "Completed",
-      "scope": "#/properties/done"
+      "label": "Label",
+      "scope": "#/properties/label"
     },
     {
       "type": "Control",
-      "scope": "#/properties/name"
-    },
-    {
-      "type": "HorizontalLayout",
-      "elements": [
-        {
-          "type": "Control",
-          "scope": "#/properties/due_date"
-        },
-        {
-          "type": "Control",
-          "scope": "#/properties/rating"
-        }
-      ]
-    },
-    {
-      "type": "HorizontalLayout",
-      "elements": [
-        {
-          "type": "Control",
-          "scope": "#/properties/recurrence"
-        },
-        {
-          "type": "Control",
-          "scope": "#/properties/recurrence_interval",
-          "rule": {
-            "effect": "HIDE",
-            "condition": {
-              "type": "LEAF",
-              "scope": "#/properties/recurrence",
-              "expectedValue": "Never"
-            }
-          }
-        }
-      ]
+      "label": "Icon",
+      "scope": "#/properties/icon"
     },
     {
       "type": "Control",
-      "scope": "#/properties/description",
+      "label": "SubSections",
+      "scope": "#/properties/subSections",
       "options": {
-        "multi": true
+        "showSortButtons": true
       }
     }
   ]
